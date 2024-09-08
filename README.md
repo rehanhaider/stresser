@@ -26,12 +26,6 @@ For Windows:
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 
-2. Install other required Python packages:
-
-```sh
-pip install -r requirements.txt
-```
-
 ## Usage
 
 To use the stress testing tool, run the `stresser.py` script with the following command-line arguments:
@@ -43,5 +37,5 @@ To use the stress testing tool, run the `stresser.py` script with the following 
 ### Example
 
 ```sh
-python stresser.py --url http://example.com/test --requests 2000 --users 100
+uv run stresser.py --url http://example.com/test --requests 2000 --users 100
 ```
