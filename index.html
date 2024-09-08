@@ -1,0 +1,28 @@
+<?php
+header(Content-Type: text/plain);
+
+echo EC2 Instance Informationn;
+echo ========================nn;
+
+// Server information
+echo Server Software:  . ['SERVER_SOFTWARE'] . n;
+echo Server Name:  . ['SERVER_NAME'] . n;
+echo Server Address:  . ['SERVER_ADDR'] . n;
+echo Server Port:  . ['SERVER_PORT'] . nn;
+
+// PHP version
+echo PHP Version:  . phpversion() . nn;
+
+// Date and time
+echo Current Date and Time:  . date('Y-m-d H:i:s') . nn;
+
+// EC2 metadata (if available)
+ = array(
+    'instance-id' =>
+'http://169.254.169.254/latest/meta-data/instance-id', 'local-ipv4' =>
+'http://169.254.169.254/latest/meta-data/local-ipv4', 'public-ipv4' =>
+'http://169.254.169.254/latest/meta-data/public-ipv4', 'availability-zone' =>
+'http://169.254.169.254/latest/meta-data/placement/availability-zone' ); echo
+EC2 Metadata:n; foreach ( as => ) { = @file_get_contents(); if ( !== false) {
+echo : n; } else { echo : Unable to retrieven; } } echo nRequest was processed
+successfully.; ?>
